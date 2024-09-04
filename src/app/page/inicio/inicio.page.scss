@@ -1,0 +1,29 @@
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+  
+    ion-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    h1 {
+      margin-bottom: 50px;
+    }
+  
+    ion-img {
+      max-width: 90%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+  
+    ion-button {
+      margin-top: 10px;
+    }
+  }
+  
+  
