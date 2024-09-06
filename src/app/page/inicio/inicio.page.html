@@ -10,24 +10,25 @@
       </ion-img>
 
       <ion-list>
-
+        <!-- Input para el usuario -->
         <ion-item>
-          <ion-input label="Usuario" placeholder="Ingresar Usuario"></ion-input>
+          <ion-input label="Usuario" placeholder="Ingresar Usuario" [(ngModel)]="username"></ion-input>
         </ion-item>
 
+        <!-- Input para la contraseña -->
         <ion-item>
-          <ion-input label="Password" type="password" value="password"></ion-input>
+          <ion-input label="Password" type="password" [(ngModel)]="password"></ion-input>
         </ion-item>
-    
-        
-        <ion-button routerLink="/home">Aceptar</ion-button>
 
       </ion-list>
+      <!-- Botón de Aceptar que llama a la función de autenticación -->
+      <ion-button (click)="login()">Aceptar</ion-button>
 
       <ion-button routerLink="/registrarse">Registrarse</ion-button>
     </ion-col>
   </ion-row>
 </ion-grid>
+
 
 
 

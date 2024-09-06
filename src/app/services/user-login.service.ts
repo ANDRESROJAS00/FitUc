@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { UserLogin } from '../models/usuarioLogin';
-
+import * as bcrypt from 'bcryptjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +11,7 @@ export class UserLoginService {
     {
       id: 1,
       username: "Batman",
-      password: "123456",
+      password: bcrypt.hashSync("123456", 10),
       rol: [
         {id:1, nomRol: "user"}
       ],
@@ -22,7 +22,7 @@ export class UserLoginService {
     {
       id: 2,
       username: "IronMan",
-      password: "456789",
+      password: bcrypt.hashSync("456789", 10),
       rol: [
         {id:2, nomRol: "admin"}
       ],
@@ -31,6 +31,11 @@ export class UserLoginService {
       edad: 43
     }
   ]
+
+
+
+
+
 
   constructor() { }
 
