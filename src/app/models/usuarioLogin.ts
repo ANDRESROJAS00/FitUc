@@ -4,5 +4,8 @@ export interface UserLogin{
     id: number;
     username: string;
     password: string;
-    rol: Role;
+    rol: Role[];
+    nombre: string;
+    apellido: string;
+    edad: number;
 }
