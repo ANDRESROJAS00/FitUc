@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-// Asegúrate de importar el servicio correctamente
-import { NavController } from '@ionic/angular';  // Para la navegación
+import { NavController } from '@ionic/angular';
 import { AutentificacionService } from 'src/app/services/autentificacion/autentificacion.service';
 
 @Component({
@@ -20,10 +19,10 @@ export class InicioPage {
     const autenticado = this.authService.verificarUser(this.username, this.password);
 
     if (autenticado) {
-      // Si es correcto, redirigir a la página de 'home'
-      this.navCtrl.navigateForward('/home');
+      // Si es correcto, redirigir a la página de 'dashboard' con el nombre de usuario
+      this.navCtrl.navigateForward('/dashboard', { state: { username: this.username } });
     } else {
-      // Si es incorrecto, mostrar un mensaje de error (puedes personalizar esto)
+      // Si es incorrecto, mostrar un mensaje de error
       alert('Usuario o contraseña incorrectos.');
     }
   }

@@ -7,9 +7,8 @@ const routes: Routes = [
     loadChildren: () => import('./page/inicio/inicio.module').then( m => m.InicioPageModule)
   },
   {
-    path: '',
-    redirectTo: 'inicio',
-    pathMatch: 'full'
+    path: 'dashboard',
+    loadChildren: () => import('./page/dashboard/dashboard.module').then( m => m.DashboardPageModule)
   },
   {
     path: 'registrarse',
@@ -18,10 +17,14 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./page/home/home.module').then( m => m.HomePageModule)
-  },  {
-    path: 'pre',
-    loadChildren: () => import('./page/pre/pre.module').then( m => m.PrePageModule)
   },
+  {
+    path: '',
+    redirectTo: 'inicio',
+    pathMatch: 'full'
+  }
+
+  
 
 ];
 
