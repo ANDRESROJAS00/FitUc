@@ -2,10 +2,11 @@
   <ion-toolbar>
     <ion-title>Dashboard</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button defaultHref="/inicio"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
 
 <ion-content class="ion-padding">
   <!-- Perfil del Usuario -->
@@ -16,10 +17,7 @@
 
     <ion-card-content>
       <ion-list>
-        <ion-item>
-          <ion-label>Nombre:</ion-label>
-          <ion-text>{{usuario?.nombre}} {{usuario?.apellido}}</ion-text>
-        </ion-item>
+        
 
         <ion-item>
           <ion-label>Username:</ion-label>
@@ -27,9 +25,16 @@
         </ion-item>
 
         <ion-item>
+          <ion-label>Nombre:</ion-label>
+          <ion-text>{{usuario?.nombre}} {{usuario?.apellido}}</ion-text>
+        </ion-item>
+
+        <ion-item>
           <ion-label>Edad:</ion-label>
           <ion-text>{{usuario?.edad}}</ion-text>
         </ion-item>
+
+
       </ion-list>
     </ion-card-content>
   </ion-card>
@@ -49,5 +54,6 @@
   </ion-card>
 
   <!-- Mostrar botón "Crear Producto" solo si es Admin -->
+  <ion-button expand="block" routerLink="/home">Inicio</ion-button>
   <ion-button *ngIf="esAdmin()" expand="block" routerLink="/crear-producto">Crear Producto</ion-button>
 </ion-content>

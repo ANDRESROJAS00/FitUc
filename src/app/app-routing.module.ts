@@ -22,7 +22,11 @@ const routes: Routes = [
     path: '',
     redirectTo: 'inicio',
     pathMatch: 'full'
+  },  {
+    path: 'imc',
+    loadChildren: () => import('./page/imc/imc.module').then( m => m.ImcPageModule)
   }
+
 
   
 

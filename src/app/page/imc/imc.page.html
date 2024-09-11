@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button> <!-- Botón de Ionic para regresar -->
+    </ion-buttons>
+    <ion-title>Cálculo de Calorías</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <!-- Campo para Edad -->
+  <ion-item>
+    <ion-label>Edad</ion-label>
+    <ion-input type="number" [(ngModel)]="edad"></ion-input>
+  </ion-item>
+
+  <!-- Campo para Peso -->
+  <ion-item>
+    <ion-label>Peso (kg)</ion-label>
+    <ion-input type="number" [(ngModel)]="peso"></ion-input>
+  </ion-item>
+
+  <!-- Campo para Altura -->
+  <ion-item>
+    <ion-label>Altura (cm)</ion-label>
+    <ion-input type="number" [(ngModel)]="altura"></ion-input>
+  </ion-item>
+
+  <!-- Selección de Sexo -->
+  <ion-item>
+    <ion-label>Sexo</ion-label>
+    <ion-select [(ngModel)]="sexo">
+      <ion-select-option value="masculino">Masculino</ion-select-option>
+      <ion-select-option value="femenino">Femenino</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <!-- Selección del Nivel de Actividad -->
+  <ion-item>
+    <ion-label>Nivel de actividad</ion-label>
+    <ion-select [(ngModel)]="nivelActividad">
+      <ion-select-option value="sedentario">Poco o ningún ejercicio</ion-select-option>
+      <ion-select-option value="ligero">Ejercicio ligero (1-3 días a la semana)</ion-select-option>
+      <ion-select-option value="moderado">Ejercicio moderado (3-5 días a la semana)</ion-select-option>
+      <ion-select-option value="intenso">Ejercicio intenso (6-7 días a la semana)</ion-select-option>
+      <ion-select-option value="muyIntenso">Ejercicio muy intenso (entrenamiento físico diario)</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <!-- Botón para Calcular Calorías -->
+  <ion-button expand="full" (click)="calcularCalorias()">Calcular Calorías</ion-button>
+
+  <!-- Mostrar el Resultado de las Calorías -->
+  <ion-card *ngIf="caloriasDiarias">
+    <ion-card-header>
+      <ion-card-title>Calorías Diarias Recomendadas</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Debes consumir aproximadamente {{ caloriasDiarias | number:'1.0-0' }} calorías al día.
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Mostrar el Resultado para Perder Peso -->
+  <ion-card *ngIf="caloriasParaPerderPeso">
+    <ion-card-header>
+      <ion-card-title>Calorías Diarias para Perder Peso</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Debes consumir aproximadamente {{ caloriasParaPerderPeso | number:'1.0-0' }} calorías al día para perder peso de manera saludable.
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
